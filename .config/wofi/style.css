@@ -1,0 +1,19 @@
+* {
+  outline: none !important;
+}
+
+window {
+  background-color: #10111f;
+  border-radius: 15px;
+}
+
+#input {
+  margin-top: 10px;
+  background-color: #10111f;
+  border: none;
+  outline-style: none;
+}
+
+#entry:selected {
+  background-color: #410500;
+}
