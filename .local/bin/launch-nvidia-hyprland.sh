@@ -12,4 +12,4 @@ export WLR_BACKEND=vulkan
 export QT_QPA_PLATFORM=wayland
 export GDK_BACKEND=wayland
 
-./launch-hyprland.sh
+"$HOME/.local/bin/launch-hyprland.sh"
