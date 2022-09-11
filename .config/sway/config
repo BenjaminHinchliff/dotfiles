@@ -86,7 +86,7 @@ client.focused #ffffffff #661026aa #285577ff #c70233ff #661026aa
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaymsg exit
 #
 # Moving around:
 #
@@ -209,3 +209,9 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+
+exec gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+exec hyprpaper
+exec dunst
+exec udiskie --notify --automount

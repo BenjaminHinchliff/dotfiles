@@ -37,7 +37,7 @@ window#waybar {
   background: inherit;
 }
 
-#workspaces button.focused {
+#workspaces button.focused, #workspaces button.active {
   padding-top: 3px;
   border-bottom: 3px solid #d64d0e;
 }
