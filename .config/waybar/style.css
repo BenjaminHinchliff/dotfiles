@@ -39,7 +39,7 @@ window#waybar {
 
 #workspaces button.focused, #workspaces button.active {
   padding-top: 3px;
-  border-bottom: 3px solid #d64d0e;
+  border-bottom: 3px solid #b51f40;
 }
 
 #workspaces button.occupied {
