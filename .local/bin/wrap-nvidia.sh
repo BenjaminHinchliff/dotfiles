@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# exports the required environment variables for wayland nvidia
 export LIBVA_DRIVER_NAME=nvidia
 export CLUTTER_BACKEND=wayland
 export XDG_SESSION_TYPE=wayland
@@ -11,5 +12,7 @@ export WLR_NO_HARDWARE_CURSORS=1
 export WLR_BACKEND=vulkan
 export QT_QPA_PLATFORM=wayland
 export GDK_BACKEND=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XCURSOR_SIZE=24
 
-"$HOME/.local/bin/launch-hyprland.sh"
+exec $@
