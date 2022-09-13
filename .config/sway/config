@@ -23,7 +23,8 @@ set $menu wofi --show drun | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/benja/Pictures/background.jpg fill
+output * background ~/Pictures/background.jpg fill
+output eDP-1 scale 1.25
 gaps inner 10
 default_border pixel 2
 default_floating_border pixel 2

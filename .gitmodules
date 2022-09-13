@@ -1,6 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/BenjaminHinchliff/AstroNvim.git
-[submodule "/home/benja/.local/bin/sway-alternating-layout"]
-	path = /home/benja/.local/bin/sway-alternating-layout
+[submodule ".local/bin/sway-alternating-layout"]
+	path = .local/bin/sway-alternating-layout
 	url = https://github.com/greole/sway-alternating-layout.git
