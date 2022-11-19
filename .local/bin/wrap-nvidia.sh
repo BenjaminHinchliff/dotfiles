@@ -12,7 +12,5 @@ export WLR_NO_HARDWARE_CURSORS=1
 export WLR_BACKEND=vulkan
 export QT_QPA_PLATFORM=wayland
 export GDK_BACKEND=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
-export XCURSOR_SIZE=24
 
-exec "$@"
+source /home/benja/.local/bin/wrap-wayland.sh

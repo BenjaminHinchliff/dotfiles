@@ -1,9 +1,14 @@
 {
-  "height": 30,
+  "height": 34,
   "margin": "8px 300px 0 300px",
-  "modules-left": [ "sway/workspaces", "sway/mode", "wlr/workspaces" ],
-  "modules-center": [ "clock" ],
-
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
     "tray",
     "temperature",
@@ -12,7 +17,9 @@
     "pulseaudio",
     "battery"
   ],
-
+  "wlr/workspaces": {
+    "on-click": "activate",
+  },
   "temperature": {
     "thermal-zone": 5,
     "format": "{temperatureC}°C 󰔏",
@@ -21,20 +28,40 @@
   },
   "network": {
     "format-wifi": "{essid} {icon}",
-    "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
     "format-ethernet": "{ifname} 󰌹",
     "format-disconnected": "󰌺"
   },
   "backlight": {
     "format": "{icon}",
-    "format-icons": [ "", "", "", "", "", "", "", "", "" ]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "pulseaudio": {
     "format": "{icon}",
     "format-bluetooth": "{icon}",
     "format-bluetooth-muted": "󰝟",
     "format-muted": "󰝟",
-    "format-icons": [ "", "", "" ],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
     "on-click": "${pkgs.pavucontrol}/bin/pavucontrol",
     "tooltip-format": "{volume}%"
   },
@@ -44,7 +71,17 @@
       "critical": 15
     },
     "format": "{icon}",
-    "format-icons": [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰁹" ],
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰁹"
+    ],
     "format-charging": "󰂄",
     "format-plugged": "󱠴",
     "tooltip-format": "{capacity}% {timeTo}"

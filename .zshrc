@@ -24,7 +24,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Add nvm
+source /usr/share/nvm/init-nvm.sh
+
 export PATH="/home/benja/.local/bin/:$PATH"
 alias config='/usr/bin/git --git-dir=/home/benja/.dotfiles --work-tree=/home/benja'
-alias ls="exa"
+alias ls="exa --icons"
 alias locate="plocate"
+alias hx="helix"
+alias ssh="kitty +kitten ssh"
+alias icat="kitty +kitten icat --align=left"
