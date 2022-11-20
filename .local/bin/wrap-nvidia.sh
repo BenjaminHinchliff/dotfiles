@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # exports the required environment variables for wayland nvidia
 export LIBVA_DRIVER_NAME=nvidia
