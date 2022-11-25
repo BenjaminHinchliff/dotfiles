@@ -27,7 +27,7 @@ compinit
 # Add nvm
 source /usr/share/nvm/init-nvm.sh
 
-export PATH="/home/benja/.local/bin/:$PATH"
+export PATH="/home/benja/.cache/yay/distrobox/pkg/distrobox/usr/bin:/home/benja/.local/bin/:$PATH"
 alias config='/usr/bin/git --git-dir=/home/benja/.dotfiles --work-tree=/home/benja'
 alias ls="exa --icons"
 alias locate="plocate"
