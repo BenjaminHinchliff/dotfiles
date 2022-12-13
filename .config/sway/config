@@ -41,11 +41,11 @@ client.focused #ffffffff #661026aa #285577ff #c70233ff #661026aa
 #
 # Example configuration:
 #
-exec swayidle -w \
-         timeout 300 'swaylock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock'
-#
+# exec swayidle -w \
+#          timeout 300 'swaylock' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock'
+# #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -121,6 +121,17 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+    # Move workspaces between windows
+    bindsym $mod+Control+Shift+$left move workspace to output left
+    bindsym $mod+Control+Shift+$down move workspace to output down
+    bindsym $mod+Control+Shift+$up move workspace to output up
+    bindsym $mod+Control+Shift+$right move workspace to output right
+    # arrow keys
+    bindsym $mod+Control+Shift+Left move workspace to output left
+    bindsym $mod+Control+Shift+Down move workspace to output down
+    bindsym $mod+Control+Shift+Up move workspace to output up
+    bindsym $mod+Control+Shift+Right move workspace to output right
 #
 # Workspaces:
 #
