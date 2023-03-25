@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=League of Legends (gamescope 1080p)
+Comment=League of Legends helper script (running with gamescope)
+Exec=gamescope -w 1920 -h 1080 -W 1920 -H 1080 -fbi -- leagueoflegends start
+Icon=leagueoflegends
+Terminal=false
+Actions=kill;winecfg;
+Categories=Game;Wine;
+StartupWMClass=leagueclientux.exe
+
+[Desktop Action kill]
+Name=kill LoL Processes
+Exec=leagueoflegends kill
+
+[Desktop Action winecfg]
+Name=run winecfg in LoL Prefix
+Exec=leagueoflegends run winecfg
