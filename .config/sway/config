@@ -23,13 +23,14 @@ set $menu wofi --show drun | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * background ~/Pictures/background.jpg fill
+output * background ~/Pictures/background.png fill
 output eDP-1 scale 1.25
 output DP-3 mode --custom 1920x1080
 gaps inner 10
 default_border pixel 2
 default_floating_border pixel 2
-client.focused #ffffffff #661026aa #285577ff #c70233ff #661026aa
+client.unfocused #FE8019 #282828 #EBDBB2 #EBDBB2 #A89984
+client.focused #FE8019 #282828 #EBDBB2 #FE8019 #D65D0E
 #
 # Example configuration:
 #
@@ -41,10 +42,10 @@ client.focused #ffffffff #661026aa #285577ff #c70233ff #661026aa
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock'
+exec swayidle -w \
+         timeout 300 'swaylock' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock'
 # #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -68,6 +69,7 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     tap enabled
     natural_scroll disabled
     middle_emulation enabled
+    accel_profile adaptive
 }
 
 ### Key bindings
@@ -223,8 +225,8 @@ bindsym $mod+r mode "resize"
 
 # media key bindings
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2.5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2.5%
 bindsym XF86MonBrightnessDown exec brightnessctl set 4%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 4%+
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -240,6 +242,7 @@ bindsym $mod+Ctrl+Shift+s exec systemctl shutdown
 
 # screenshots
 bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+bindsym $mod+Shift+p exec grim - | wl-copy -t image/png
 
 #
 # Status Bar:
@@ -253,12 +256,18 @@ include /etc/sway/config.d/*
 
 for_window [title="Hexagonal Chess"] floating enable
 for_window [app_id="org.kde.polkit-kde-authentication-agent-1"] floating enable
+for_window [title="WebCord – Settings"] floating enable
+
+set $gnome-interface org.gnome.desktop.interface
+exec_always {
+  gsettings set $gnome-interface gtk-theme 'Adwaita-dark'
+  gsettings set $gnome-interface icon-theme 'gruvbox-dark-icons-gtk'
+  gsettings set $gnome-interface color-scheme prefer-dark
+}
 
 exec gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 exec dunst
 exec udiskie --notify --automount
 exec /usr/lib/polkit-kde-authentication-agent-1
-# startup alternating layouts
-exec autotiling
 # screenshare wlr
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

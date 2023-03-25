@@ -1,15 +1,15 @@
 window {
-  background-color: #10111f;
+  background-color: #282828;
   border-radius: 15px;
 }
 
 #input {
   margin-top: 10px;
-  background-color: #10111f;
+  background-color: #504945;
   border: none;
   color: white;
 }
 
 #entry:selected {
-  background-color: #410500;
+  background-color: #D65D0E;
 }
