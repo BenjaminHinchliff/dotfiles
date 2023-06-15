@@ -2,11 +2,11 @@
   border: none;
   font-family: "Noto Sans", "Material Design Icons", "Symbols Nerd Font Mono";
   font-size: 14px;
-  color: #EBDBB2;
+  color: #f5e0dc;
 }
 
 window#waybar {
-  background-color: #282828;
+  background-color: #313244;
   border-radius: 20px;
 }
 
