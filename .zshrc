@@ -49,7 +49,7 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 alias config='/usr/bin/git --git-dir=/home/benja/.dotfiles --work-tree=/home/benja'
 alias ls="exa --icons"
 alias locate="plocate"
-# alias ssh="kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 alias icat="kitty +kitten icat --align=left"
 alias nnn="nnn -ade"
 alias make="make -j$(nproc)"
@@ -92,20 +92,7 @@ n ()
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+export CPM_SOURCE_CACHE=$HOME/.cache/CPM
+
 eval "$(starship init zsh)"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-        . "/usr/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

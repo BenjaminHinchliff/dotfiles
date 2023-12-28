@@ -21,4 +21,22 @@ config.window_padding = {
   bottom = 0,
 }
 
+local xcursor_size = nil
+local xcursor_theme = nil
+
+local success, stdout = wezterm.run_child_process({ "gsettings", "get", "org.gnome.desktop.interface",
+  "cursor-theme" })
+if success then
+  xcursor_theme = stdout:gsub("'(.+)'\n", "%1")
+end
+
+success, stdout = wezterm.run_child_process({ "gsettings", "get", "org.gnome.desktop.interface",
+  "cursor-size" })
+if success then
+  xcursor_size = tonumber(stdout)
+end
+
+config.xcursor_theme = xcursor_theme
+config.xcursor_size = xcursor_size
+
 return config

@@ -136,4 +136,11 @@ return {
       ft = "pest",
     },
   },
+  polish = function()
+    vim.filetype.add {
+      extension = {
+        wgsl = "wgsl"
+      }
+    }
+  end
 }
