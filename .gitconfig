@@ -17,3 +17,9 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
