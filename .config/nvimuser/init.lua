@@ -17,11 +17,19 @@ return {
     },
   },
   lsp = {
+    formatting = {
+      -- timeout_ms = 3200,
+    },
+    servers = {
+      "racket_langserver",
+    },
     config = {
       texlab = {
         settings = {
           texlab = {
             build = {
+              executable = "latexmk",
+              args = { "-pdf", "-xelatex", "-interaction=nonstopmode", "-synctex=1", "%f" },
               onSave = true,
             }
           }
@@ -40,13 +48,13 @@ return {
         require("catppuccin").setup()
       end
     },
-    {
-      "lervag/vimtex",
-      init = function()
-        vim.g.maplocalleader = ";"
-      end,
-      event = "BufRead *.tex",
-    },
+    -- {
+    --   "lervag/vimtex",
+    --   init = function()
+    --     vim.g.maplocalleader = ";"
+    --   end,
+    --   event = "BufRead *.tex",
+    -- },
     {
       "elkowar/yuck.vim"
     },
@@ -57,6 +65,28 @@ return {
     {
       "lambdalisue/suda.vim",
       lazy = false,
+    },
+    {
+      "nvim-neorg/neorg",
+      build = ":Neorg sync-parsers",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("neorg").setup {
+          load = {
+            ["core.defaults"] = {},  -- Loads default behaviour
+            ["core.concealer"] = {}, -- Adds pretty icons to your documents
+            ["core.export"] = {},
+            ["core.dirman"] = {      -- Manages Neorg workspaces
+              config = {
+                workspaces = {
+                  notes = "~/notes",
+                },
+              },
+            },
+          },
+        }
+      end,
+      ft = "norg",
     },
     {
       "nvim-treesitter/nvim-treesitter",
@@ -94,6 +124,16 @@ return {
         }
         opts.section.header.opts.hl = "Crab"
       end,
+    },
+    { -- override nvim-autopairs plugin
+      "windwp/nvim-autopairs",
+      opts = {
+        enable_check_bracket_line = false,
+      },
+    },
+    {
+      "pest-parser/pest.vim",
+      ft = "pest",
     },
   },
 }

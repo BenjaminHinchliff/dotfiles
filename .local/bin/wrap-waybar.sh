@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-env GTK_THEME=Adwaita:dark waybar
+GTK_THEME=Adwaita:dark waybar
