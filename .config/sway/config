@@ -22,12 +22,11 @@ set $menu wofi --show drun | xargs swaymsg exec --
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * background ~/Pictures/background.png fill
 output eDP-1 scale 1.25
 
-output HDMI-A-1 pos 0 0
-output eDP-1 pos 1920 750
+output HDMI-A-1 pos 1805 0
+output eDP-1 pos 0 600
 
 gaps inner 10
 default_border pixel 2
@@ -274,6 +273,7 @@ exec dunst
 exec udiskie --notify --automount
 exec /usr/lib/polkit-kde-authentication-agent-1
 exec nm-applet
-# exec XDG_CURRENT_DESKTOP=KDE ibus-daemon -drx
-exec fcitx5
+#exec XDG_CURRENT_DESKTOP=KDE ibus-daemon -drx
+#exec fcitx5
 exec libinput-gestures-setup start
+exec wluma

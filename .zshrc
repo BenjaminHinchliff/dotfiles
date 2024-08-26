@@ -37,24 +37,28 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # FNM
 eval "$(fnm env --use-on-cd)"
 
-export PATH="$HOME/.local/bin/:$HOME/bin:$HOME/.cargo/bin/:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$PATH"
 export PAGER="nvimpager"
 
 # ccache
 export PATH="/usr/lib/ccache/bin:$PATH"
 
 # Doom Emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
+# export PATH="$HOME/.emacs.d/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=/home/benja/.dotfiles --work-tree=/home/benja'
 alias ls="exa --icons"
+alias ll="ls -l"
 alias locate="plocate"
-# alias ssh="kitty +kitten ssh"
+alias ssh="kitty +kitten ssh"
 alias icat="kitty +kitten icat --align=left"
 alias nnn="nnn -ade"
 alias make="make -j$(nproc)"
 alias neofetch="neofetch --kitty --source ~/Pictures/corro.png --crop_mode fit --size 300px"
 alias pscale="pscale/pscale"
+alias t="todo.sh"
+alias docker="podman"
+alias sudo="run0"
 
 # nnn options
 export NNN_OPTS="H"
@@ -94,6 +98,8 @@ n ()
 }
 eval "$(starship init zsh)"
 
+eval "$(zoxide init zsh --cmd cd)"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -108,4 +114,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
