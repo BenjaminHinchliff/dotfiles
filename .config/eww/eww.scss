@@ -1,0 +1,174 @@
+// Catppuccin
+$warning: #FF0000;
+$highlight: #FD760A;
+$text: #f4e4c8;
+$base: #24273A;
+$mantle: #1E2030;
+$crust: #181926;
+$highlight-contrast: #d64d1b;
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+  font-size: 1.1rem;
+  font-family: Iosevka, 'Symbols Nerd Font Mono';
+  color: $text;
+}
+
+.workspaceoverlay {
+  background-color: transparent;
+}
+
+.no-background {
+  background-color: transparent;
+}
+
+scale>contents>trough {
+  background-color: $crust;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 75px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+scale>contents>trough>slider {
+  background-color: $text;
+  border-radius: 50px;
+  min-height: 15px;
+  min-width: 15px;
+}
+
+scale>contents>trough>highlight {
+  background-color: $highlight-contrast;
+  border-radius: 50px;
+  min-height: 3px;
+}
+
+.time {
+  background-color: $highlight-contrast;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  padding-right: 10px;
+}
+
+.battery {
+  background-color: $highlight-contrast;
+}
+
+.temp {
+  background-color: $highlight-contrast;
+}
+
+.tray {
+  background-color: $base;
+  min-height: 30px;
+  margin-right: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  &>widget>window>decoration {
+    background-color: $crust;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  &>widget>window>menu>menuitem:hover {
+    background-color: $highlight-contrast;
+  }
+}
+
+.net {
+  background-color: $highlight-contrast;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.shown {
+  background-color: $highlight-contrast;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.hidden {
+  background-color: $base;
+  color: $text;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.stats {
+  background-color: $highlight-contrast;
+}
+
+.volume {
+  background-color: $highlight-contrast;
+  color: $mantle;
+}
+
+.title {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: $highlight-contrast;
+  color: $text;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.workspaces-widget {
+  background-color: $crust;
+  color: $text;
+  min-height: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.workspace-DP-2 {
+  padding-left: 15px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.workspace-DP-4 {
+  padding-left: 10px;
+  padding-right: 15px;
+  background-color: $base;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.selected {
+  color: $highlight-contrast;
+}
+
+.urgent {
+  color: $warning;
+}
+
+.workspace-entry {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 2px;
+  &.current {
+    font-weight: bold;
+    margin-bottom: 0;
+    border-bottom: 2px solid $highlight;
+  }
+}
+
+.process {
+  font-style: oblique;
+}
