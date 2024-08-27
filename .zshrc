@@ -58,7 +58,7 @@ alias neofetch="neofetch --kitty --source ~/Pictures/corro.png --crop_mode fit -
 alias pscale="pscale/pscale"
 alias t="todo.sh"
 alias docker="podman"
-alias sudo="run0"
+# alias sudo="run0" # waiting on persistence
 
 # nnn options
 export NNN_OPTS="H"
