@@ -70,6 +70,14 @@ scale>contents>trough>highlight {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 
+  // &:first-child {
+  //   padding-left: 8px;
+  // }
+
+  // &:last-child {
+  //   padding-right: 8px;
+  // }
+
   &>widget>window>decoration {
     background-color: $crust;
     border-radius: 10px;

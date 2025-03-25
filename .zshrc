@@ -35,13 +35,17 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # source /usr/share/nvm/init-nvm.sh
 
 # FNM
-eval "$(fnm env --use-on-cd)"
+# eval "$(fnm env --use-on-cd)"
 
 export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$PATH"
 export PAGER="nvimpager"
 
 # ccache
 export PATH="/usr/lib/ccache/bin:$PATH"
+
+# Ruby Gems
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
 
 # Doom Emacs
 # export PATH="$HOME/.emacs.d/bin:$PATH"
@@ -99,3 +103,47 @@ n ()
 eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh --cmd cd)"
+
+
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+RED_B='\e[1;91m'
+GREEN_B='\e[1;92m'
+YELLOW_B='\e[1;93m'
+BLUE_B='\e[1;94m'
+PURPLE_B='\e[1;95m'
+CYAN_B='\e[1;96m'
+WHITE_B='\e[1;97m'
+RESET='\e[0m'
+
+red() { echo -e "${RED_B}${1}${RESET}"; }
+green() { echo -e "${GREEN_B}${1}${RESET}"; }
+yellow() { echo -e "${YELLOW_B}${1}${RESET}"; }
+blue() { echo -e "${BLUE_B}${1}${RESET}"; }
+purple() { echo -e "${PURPLE_B}${1}${RESET}"; }
+cyan() { echo -e "${CYAN_B}${1}${RESET}"; }
+white() { echo -e "${WHITE_B}${1}${RESET}"; }
+
+
+yellow "$(figlet -f /usr/share/figlet/red_phoenix "$(hostnamectl --static)")"
+
+uptime
+
+purple "Outstanding items:"
+t ls

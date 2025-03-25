@@ -23,10 +23,10 @@ set $menu wofi --show drun | xargs swaymsg exec --
 ### Output configuration
 #
 output * background ~/Pictures/background.png fill
-output eDP-1 scale 1.25
+output eDP-1 scale 1.3333333
 
-output HDMI-A-1 pos 1805 0
-output eDP-1 pos 0 600
+output HDMI-A-1 pos 0 0
+output eDP-1 pos 1920 600
 
 gaps inner 10
 default_border pixel 2

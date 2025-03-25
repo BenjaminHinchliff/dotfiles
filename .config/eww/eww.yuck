@@ -32,8 +32,12 @@
   :interval "0.05s"
   "pactl get-sink-volume @DEFAULT_SINK@ | grep '%' | cut -d '/' -f 2 | cut -d '%' -f 1 | tr -d ' '")
 
+(defpoll mute
+  :interval "0.05s"
+  "pactl get-sink-mute @DEFAULT_SINK@ | cut -d ':' -f 2 | tr -d ' '")
+
 (defpoll battery-icon
-  :interval "1m"
+  :interval "2s"
   :initial-value ""
   "./scripts/get-battery-icon.sh")
 
@@ -76,7 +80,7 @@
         :hover-cond netwidget-hover
         (label
          :class "net shown"
-         :text "${strlength(ssid) == 0 ? 'No Connection' : '   ${ssid}'}")
+         :text "${strlength(ssid) == 0 ? 'No Connection' : ' ${ssid}'}")
         (label
             :class "net hidden"
             ;; :text "   ${round(EWW_NET.wlp2s0.up, 1)}%  "))
@@ -104,7 +108,7 @@
         :onclick "exec pavucontrol"
         (label
          :class "shown"
-         :text " ${volume}%")
+         :text " ${mute == "yes" ? "muted" : "${volume}%"}")
         (metric
             :class "hidden"
             :label ""
